@@ -22,10 +22,12 @@ public class ChessPosition {
 		return row;
 	}
 	
+	//Transforma posição de xadrez em posição
 	protected Position toPosition() {
 		return new Position(8-row, column - 'a');
 	}
 	
+	//Transforma posição em posição de xadrez
 	protected static ChessPosition fromPosition(Position position) {
 		return new ChessPosition((char)('a' - position.getCollumn()), 8 - position.getRow());
 	}
