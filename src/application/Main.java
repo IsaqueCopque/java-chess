@@ -38,6 +38,16 @@ public class Main {
 				if(capturedPiece != null)
 					captured.add(capturedPiece);
 				
+				if(match.getPromoted() != null) {
+					System.out.print("Informe a peca para ser promovida (B/N/R/Q): ");
+					String type = sc.nextLine().toUpperCase();
+					while(!type.equals("B") && !type.equals("N") && !type.equals("R") && !type.equals("Q")) {
+						System.out.print("Valor invalido. Informe a peca para ser promovida (B/N/R/Q): ");
+						type = sc.nextLine().toUpperCase();
+					}
+					match.replacePromotedPiece(type);
+				}
+				
 			}catch(ChessException e) {
 				System.out.println(e.getMessage());
 				sc.nextLine();
